@@ -152,7 +152,9 @@ jobs:
         #[System.Console]::WriteLine("##vso[task.setvariable variable=CurrentVersion]$CurrentVersion")
 
         Write-Host "Setting current version to $CurrentVersion."
-
+      env:
+        ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
+        
     # Run the Publish script to build clients and server.
     - name: Run Publish script
       shell: powershell
